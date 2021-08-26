@@ -1,0 +1,134 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-family: "Helvetica", sans-serif;
+    width: 1200px;
+}
+
+nav{
+    background: #f0f1f5;
+}
+
+nav ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 180px;
+    margin: 10px 0;
+    padding: 15px 0;
+    border-right: 3px solid white;
+}
+
+nav ul li:first-child {
+    border-left: 3px solid white;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00d3d4;
+    font-size: 20px;
+}
+
+nav ul li img {
+    padding-bottom: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35px;
+}
+
+main section {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+main section:first-child {
+    background-color: #555c6f;
+    color: #b2b6c0;
+    height: 483px;
+    width: 420px;   
+    padding: 36px;
+    padding-bottom: 5px;
+    float: left;
+}
+
+main section .start{
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 12px;
+    margin-right: 0;
+}
+main section .end{
+    margin-top: 154px;
+    margin-bottom: 0rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body > main > section:nth-child(1) > h2 {
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+main section h2 p{
+    margin: 0;
+}
+
+body > main > section:nth-child(1) > ul > li > a > img {
+    width: 20px;
+    margin-right: 12px;
+}
+
+body > main > section:nth-child(1) > ul > li {
+    display: inline-block;
+    text-decoration: none;
+}
+
+body > main > section:nth-child(1) > ul {
+    display: inline-block;
+    margin-top: 55px;
+    margin-left: -44px;
+}
+
+main section:last-child {
+    width: 638px;
+    height: 454px;
+    float: right;
+    background: #01bdbe;
+    color: white;
+    padding: 35px;
+}
+
+main section:last-child article {
+    height: 200px;
+    width: 370px;
+    display: inline-block;
+    margin-left: 0;
+}
+
+body > main > section:nth-child(2) > article:nth-child(2) > p {
+    width: 219px;
+}
+
+.image {
+    float: right;
+    width: 250px;
+    margin-top: -18rem;
+}
+
+section:last-child img {
+    border-width: 10px;
+    border-color: white;
+    border-style: solid;
+    width: 190px;
+    float: right;
+    margin-left: 0;
+    margin-top: -54px;
+}

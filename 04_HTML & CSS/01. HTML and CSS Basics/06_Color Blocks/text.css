@@ -1,0 +1,14 @@
+div{
+    display:inline-block;
+    font-size: 50px;
+    block-size: 60px;
+    margin-right: 8px;
+}
+p{
+    margin: 0;
+}
+.green{background-color: green;}
+.blue{background-color: blue;}
+.red{background-color: red;}
+.purple{background-color: purple}
+.orange{background-color: orange}   

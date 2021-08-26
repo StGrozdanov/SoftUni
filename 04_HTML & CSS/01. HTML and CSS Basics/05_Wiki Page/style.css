@@ -1,0 +1,12 @@
+a {
+    color: blue;
+    font-weight: bold;
+}
+
+article p:not(:last-child) {
+    margin: 0;
+}
+
+article p:last-child {
+    margin-top: 0;
+}

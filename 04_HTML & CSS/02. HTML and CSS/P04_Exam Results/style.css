@@ -1,0 +1,16 @@
+table, td, tr, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+    td, th{
+        padding: 10px;
+    }
+    .bold {
+        font-weight: bold;
+        text-align: center;
+      }
+      .result {
+        width: 400px;
+        text-align: left;
+        padding-right: 5px; 
+      }
