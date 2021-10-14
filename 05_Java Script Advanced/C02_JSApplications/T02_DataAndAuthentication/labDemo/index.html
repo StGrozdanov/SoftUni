@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test User Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 id='register-heading'>Register</h2>
+        <form id="register-form">
+            <label>Email: <input type="text" name="email"></label>
+            <label>Password: <input type="password" name="password"></label>
+            <label>Repeat Password: <input type="password" name="repeat-password"></label>
+            <input type="submit" value="Register">
+        </form>
+        <h2 id="login-heading">Login</h2>
+        <form id="login-form">
+            <label>Email: <input type="text" name="email"></label>
+            <label>Password: <input type="password" name="password"></label>
+            <input type="submit" value="Login">
+        </form>
+        <h2 id="movie-heading" class="hidden">Create Movie</h2>
+        <form id="create-form" class="hidden">
+            <label>Movie Title: <input type="text" name="title"></label>
+            <label>Description: <input type="text" name="description"></label>
+            <label>Upload Image: <input type="text" name="img"></label>
+            <input type="submit" value="Add Movie">
+        </form>
+        <div id="result" class="hidden"></div>
+        <script type="module" src="test.js"></script>
+</body>
+</html>
