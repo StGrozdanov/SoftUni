@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+</head>
+
+<body>
+    <button id="loadBooks">LOAD ALL BOOKS</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="books">
+           
+        </tbody>
+    </table>
+
+    <form id="add-form">
+        <h3>Add book</h3>
+        <label>TITLE</label>
+        <input type="text" name="title" id="add-title" placeholder="Title...">
+        <label>AUTHOR</label>
+        <input type="text" name="author" id="add-author" placeholder="Author...">
+        <input type="submit" id="btnSubmit" value="Submit">
+    </form>
+
+    <form class="hidden" id="edit-form">
+        <input type="hidden" id="edit-id" name="id">
+        <h3>Edit book</h3>
+        <label>TITLE</label>
+        <input type="text" name="title" id="edit-title" placeholder="Title...">
+        <label>AUTHOR</label>
+        <input type="text" name="author" id="edit-author" placeholder="Author...">
+        <input type="submit" id="btnSave" value="Save">
+    </form>
+</body>
+
+</html>
