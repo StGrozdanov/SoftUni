@@ -1,0 +1,4 @@
+To start the application:
+
+1) node run server.js
+2) npm start /will trigger the lite-server and open the app/

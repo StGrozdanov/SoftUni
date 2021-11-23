@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie List</title>
+    <link rel="icon" type="image/png" href="./static/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/site.css">
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="nav">
+            <a class="navbar-brand text-light" id="home" href="/">Movies</a>
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                    <div class="nav-link" id="welcome">Welcome, guest</div>
+                </li>
+                <li class="nav-item user">
+                    <a class="nav-link" href="#" id="logout">Logout</a>
+                </li>
+                <li class="nav-item guest">
+                    <a class="nav-link" id="login" href="/login">Login</a>
+                </li>
+                <li class="nav-item guest">
+                    <a class="nav-link" href="/register" id="register">Register</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="root"></div>
+
+        <footer class="page-footer font-small">
+            <div class="footer-copyright text-center py-3">© 2020
+                <a href="#" class="text-dark">JS
+                    Applications</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
