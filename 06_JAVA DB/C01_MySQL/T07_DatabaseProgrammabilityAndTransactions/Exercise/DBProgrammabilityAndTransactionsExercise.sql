@@ -99,6 +99,18 @@ BEGIN
     ORDER BY `full_name`, `id`;
 END $
 
+#P09
+CREATE PROCEDURE usp_get_holders_with_balance_higher_than(target DECIMAL(16,4))
+BEGIN
+	SELECT ah.`first_name`, ah.`last_name`
+	FROM `account_holders` AS ah
+	JOIN `accounts` AS a
+	ON ah.`id` = a.`account_holder_id`
+	GROUP BY ah.`id`
+	HAVING SUM(a.`balance`) > target
+	ORDER BY a.`account_holder_id`;
+END$
+
 #P10
 CREATE FUNCTION ufn_calculate_future_value(sum DECIMAL(16, 4), yearly_interest_rate DOUBLE(4, 4), number_of_years INT)
 RETURNS DECIMAL(16, 4)
@@ -218,3 +230,56 @@ call usp_transfer_money(1, 2, 10)$
 select * from accounts 
 where id in (1,2)
 order by id$
+
+#P15
+CREATE TABLE `logs` (
+	log_id INT AUTO_INCREMENT PRIMARY KEY,
+    account_id INT,
+    old_sum DECIMAL(16,4),
+    new_sum DECIMAL(16,4)
+)$
+
+CREATE TRIGGER tr_updated_accounts
+AFTER UPDATE
+ON accounts
+FOR EACH ROW
+BEGIN
+	INSERT INTO `logs`(`account_id`, `old_sum`, `new_sum`)
+	VALUES(OLD.`id`,OLD.`balance`,NEW.`balance`);
+END$
+
+SELECT * FROM `logs`$
+
+UPDATE `accounts`
+SET `balance` = `balance` + 10
+WHERE `id` = 1$
+
+#P16
+CREATE TABLE `notification_emails` (
+	`id` INT AUTO_INCREMENT PRIMARY KEY,
+    `recipient` INT,
+    `subject` VARCHAR(200),
+    `body` TEXT
+)$
+
+DROP TRIGGER tr_info_added_to_logs$
+
+CREATE TRIGGER tr_info_added_to_logs
+AFTER INSERT
+ON `logs`
+FOR EACH ROW
+BEGIN
+	INSERT INTO `notification_emails`(`recipient`, `subject`, `body`)
+	VALUES
+    (NEW.`account_id`,
+    CONCAT("Balance change for account: ", NEW.`account_id`), 
+    CONCAT("On ", DATE_FORMAT(NOW(), "%M %Y at %h:%i:%s %p"), " your balance was changed from ", 
+    NEW.`old_sum`, " to", NEW.`new_sum`,".")
+    );
+END$
+
+UPDATE `accounts`
+SET `balance` = `balance` + 10
+WHERE `id` = 1$
+
+SELECT * FROM `notification_emails`$
