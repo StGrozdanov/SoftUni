@@ -67,10 +67,8 @@ CREATE TABLE `likes` (
 
 #P02
 INSERT INTO `addresses`(`address`, `town`, `country`, `user_id`)
-SELECT u.`username`, u.`password`, a.`country`, u.`id` 
+SELECT u.`username`, u.`password`, u.`ip`, u.`age` 
 FROM `users` AS u
-JOIN `addresses` AS a
-ON u.`id` = a.`user_id`
 WHERE `gender` = 'M';
 
 #P03
