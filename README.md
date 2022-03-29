@@ -1,2 +1,2 @@
 # SoftUni
-Home works, projects, anything related to my university course
+Home works, projects, anything related to my university courses
