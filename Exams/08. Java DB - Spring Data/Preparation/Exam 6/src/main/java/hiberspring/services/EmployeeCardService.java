@@ -1,0 +1,16 @@
+package hiberspring.services;
+
+import hiberspring.models.entities.EmployeeCard;
+
+import java.io.IOException;
+
+public interface EmployeeCardService {
+
+    Boolean employeeCardsAreImported();
+
+    String readEmployeeCardsJsonFile() throws IOException;
+
+    String importEmployeeCards(String employeeCardsFileContent) throws IOException;
+
+    EmployeeCard findCardByCardNumber(String card);
+}
