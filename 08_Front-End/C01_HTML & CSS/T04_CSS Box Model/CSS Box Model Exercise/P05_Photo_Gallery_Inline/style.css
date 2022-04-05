@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(212 209 209);
+    margin: 50px 180px;
+    padding: 0;
+}
+
+.gallery {
+    list-style-type: none;
+}
+
+.gallery li {
+    border-width: 0.4rem;
+    border-color: black;
+    border-style: solid;
+    display: inline-block;
+    padding: 15px;
+    margin: 15px 15px;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.gallery li img {
+    width: 100%;
+}
