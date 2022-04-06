@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+    margin: 30px 150px;
+}
+
+img {
+    border: solid black;
+    padding: 5px;
+    width: 12%;
+    box-shadow: -1px 0px 10px 10px rgb(0 0 0 / 25%);
+}
+
+header h1 {
+    font-size: 180%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+section {
+    margin-bottom: 65px;
+}
+
+section:nth-child(3) img {
+    float: right;
+    margin: 90px 80px 10px 10px;
+}
+
+blockquote {
+    border-left: solid #8080805e;
+    padding-left: 25px;
+    width: 24%;
+    font-style: italic;
+    color: #808080e3;
+    display: inline-block;
+}
+
+blockquote p:nth-child(2) {
+    text-align: right;
+}
+
+.paragraph-to-quote {
+    width: 48%;
+    display: inline-block;
+}
+
+.third-section-pic {
+    float: left;
+    width: 17%;
+    margin-right: 32px;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #86d70a;
+}
+
+aside section {
+    margin-bottom: 15px;
+}
+
+article aside {
+    width: 20%;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+body > article > section:nth-child(3) > h2 {
+    display: inline-block;
+}
