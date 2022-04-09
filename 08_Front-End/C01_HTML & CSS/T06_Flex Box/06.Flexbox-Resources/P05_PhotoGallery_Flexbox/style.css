@@ -1,0 +1,30 @@
+body {
+    margin: 40px 80px;
+    background-color: lightgray;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, ul, li {
+    display: flex;
+}
+
+ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+li {
+    border: 10px solid black;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: white;
+    box-shadow: -1px 2px 20px 4px grey;
+}
+
+img {
+    padding: 60px 20px;
+}

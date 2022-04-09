@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    margin: 50px;
+    background: aliceblue;
+    flex-wrap: wrap;
+}
+
+header, main, aside, footer {
+    padding: 10px 20px 60px 10px;
+    background: white;
+    box-shadow: 1px 1px 7px 2px #cbcbcb;
+    margin: 15px;
+}
+
+header {
+    flex-basis: 100%;
+    padding: 10px 20px 80px 10px;
+}
+
+main {
+    flex-grow: 3;
+    padding: 10px 20px 200px 10px;
+}
+
+aside {
+    flex-grow: 1;
+}
+
+footer {
+    flex-basis: 100%;
+}

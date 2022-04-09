@@ -1,0 +1,32 @@
+body {
+    margin: 0px;
+    display: flex;
+    background: rgb(238, 238, 238);
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    flex-wrap: wrap;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+hr {
+    border: 0.5px solid black;
+}
+
+header, footer {
+    width: 100vw;
+}
+
+h1,
+main {
+    margin: 10px 20px;
+}

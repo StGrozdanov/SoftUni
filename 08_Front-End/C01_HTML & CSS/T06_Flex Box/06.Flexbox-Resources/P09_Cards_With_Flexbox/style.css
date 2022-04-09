@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: rgb(238, 238, 238);
+}
+
+.cards-layout {
+    display: flex;
+    margin: 0 20px;
+    flex-wrap: wrap;
+}
+
+.cards-layout article {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0.5px solid gray;
+    max-width: 15vw;
+    margin: 10px 12px;
+}
+
+.cards-layout article main {
+    flex-grow: 1;
+}
+
+.cards-layout article header img {
+    width: 100%;
+}
+
+.cards-layout article main, footer {
+    padding: 12px;
+}
+
+article footer {
+    border-top: 1px solid gray;
+    height: 10%;
+}
+
+article footer p {
+    margin: 0;
+}

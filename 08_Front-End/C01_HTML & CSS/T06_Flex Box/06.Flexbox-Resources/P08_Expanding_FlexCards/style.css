@@ -1,0 +1,35 @@
+body {
+    background: rgb(238, 238, 238);
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    max-width: 60vw;
+    align-items: center;
+}
+
+article {
+    margin: 0 12px;
+    height: 40%;
+    flex-shrink: 4;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 1px 1px 20px 3px black;
+    object-fit: cover;
+}
+
+.wide-img-container {
+    flex-shrink: 1;
+}
