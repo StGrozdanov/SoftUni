@@ -1,0 +1,42 @@
+@media all and (max-width: 768px) {
+    .fa-solid {
+        display: block;
+    }
+
+    .fa-solid span {
+        display: inline-block;
+    }
+
+    header {
+        flex-direction: column;
+        border: none;
+    }
+
+    header h1 {
+        align-self: baseline;
+        font-size: 38px;
+    }
+
+    header ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header ul li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 5px 0px;
+    }
+
+    header ul li a {
+        width: 100%;
+    }
+}

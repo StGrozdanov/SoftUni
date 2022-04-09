@@ -1,0 +1,12 @@
+@media all and (max-width: 426px) {
+    header h1 {
+        align-self: center;
+    }
+}
+
+@media all and (max-width: 360px) {
+    header h1 {
+        align-self: center;
+        font-size: 30px;
+    }
+}
