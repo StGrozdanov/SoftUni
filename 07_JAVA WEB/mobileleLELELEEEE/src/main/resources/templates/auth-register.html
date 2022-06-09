@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MobiLeLeLe</title>
+    <link rel="stylesheet" href="/css/reset-css.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div th:replace="fragments/navbar">Navbar</div>
+
+<div class="container">
+    <h2 class="text-center text-white">Register User</h2>
+    <form th:action="@{/users/register}" th:method="POST" th:object="${userModel}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="firstName" class="text-white font-weight-bold">First Name</label>
+                <input
+                        th:field="${userModel.firstName}"
+                        th:errorclass="is-invalid"
+                        name="firstName"
+                        id="firstName"
+                        type="text"
+                        min="2"
+                        max="20"
+                        class="form-control"
+                        placeholder="First name"
+                />
+                <p class="invalid-feedback errors alert alert-danger">
+                    First name is required, should be minimum 3 characters.
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="lastName" class="text-white font-weight-bold">Last Name</label>
+                <input th:field="${userModel.lastName}" th:errorclass="is-invalid" name="lastName" id="lastName" type="text" min="2" max="20" class="form-control"
+                       placeholder="First name"/>
+                <p class="invalid-feedback errors alert alert-danger">
+                    Last name is required and should be minimum 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="username" class="text-white font-weight-bold">Username</label>
+                <input th:field="${userModel.username}" th:errorclass="is-invalid" name="username" id="username" type="text" min="2" max="20" class="form-control"
+                       placeholder="username"/>
+                <p class="invalid-feedback errors alert alert-danger">
+                    Username is required, should be minimum 3 characters and should not be taken.
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="password" class="text-white font-weight-bold">Password</label>
+                <input name="password" th:field="${userModel.password}" th:errorclass="is-invalid" id="password" type="password" min="2" max="20" class="form-control"
+                       placeholder="Password"/>
+                <p class="invalid-feedback errors alert alert-danger">
+                    Password is required and should be minimum 5 symbols.
+                </p>
+            </div>
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label class="text-center text-white font-weight-bold" for="roles">Roles</label>-->
+<!--            <select id="roles" class="form-control" multiple>-->
+<!--                <option>-->
+<!--                </option>-->
+<!--            </select>-->
+<!--            <p class="errors alert alert-danger">-->
+<!--                Selecting a role is required.-->
+<!--            </p>-->
+<!--        </div>-->
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Submit Offer"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer></footer>
+</div>
+
+</body>
+</html>
