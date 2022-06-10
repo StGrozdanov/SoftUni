@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="main-nav">
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a th:if="${@userSession.getLoggedIn() == false}" href="/users/login">Login</a>
+        </li>
+        <li>
+            <a th:if="${@userSession.getLoggedIn() == false}" href="/users/register">Register</a>
+        </li>
+        <li>
+            <a th:if="${@userSession.getLoggedIn() == false}" href="/about">About</a>
+        </li>
+        <li>
+            <a th:if="${@userSession.getLoggedIn()}" href="/add-route">Add new route</a>
+        </li>
+        <li>
+            <a th:if="${@userSession.getLoggedIn()}" href="/users/profile">Profile</a>
+        </li>
+<!--        <li>-->
+<!--            <a href="/users/profile">Admin</a>-->
+<!--        </li>-->
+        <li>
+            <a th:if="${@userSession.getLoggedIn()}" href="/users/logout">Logout</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
