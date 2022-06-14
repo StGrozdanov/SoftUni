@@ -1,7 +1,7 @@
 package com.example.mobilelele.web;
 
-import com.example.mobilelele.models.dtos.UserLoginDTO;
-import com.example.mobilelele.models.dtos.UserRegisterDTO;
+import com.example.mobilelele.models.dtos.UserDTOs.UserLoginDTO;
+import com.example.mobilelele.models.dtos.UserDTOs.UserRegisterDTO;
 import com.example.mobilelele.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -36,14 +36,14 @@ public class UserController {
     public String loginUser(
             @Valid UserLoginDTO userLoginDTO,
             BindingResult bindingResult,
-            RedirectAttributes redirectAttributes
-                            ) {
+            RedirectAttributes redirectAttributes)
+    {
         if (bindingResult.hasErrors() || !this.userService.userLoggedIn(userLoginDTO)) {
             handleUserPostErrors(userLoginDTO, bindingResult, redirectAttributes);
             bindingResult.rejectValue("password", "InvalidPasswordError", "Invalid password.");
+            bindingResult.rejectValue("username", "InvalidUsernameError", "Invalid username.");
             return "redirect:/users/login";
         }
-
         return "redirect:/";
     }
 
@@ -53,18 +53,17 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerPage
-            (
+    public String registerPage(
             @Valid UserRegisterDTO user,
             BindingResult bindingResult,
-            RedirectAttributes redirectAttributes
-                                                  ) {
-
-        if (bindingResult.hasErrors() || !this.userService.registerUser(user)) {
+            RedirectAttributes redirectAttributes)
+    {
+        if (bindingResult.hasErrors()) {
             handleUserPostErrors(user, bindingResult, redirectAttributes);
-            bindingResult.rejectValue("username", "UsernameTakenError", "This username is already taken.");
             return "redirect:/users/register";
         }
+
+        this.userService.registerUser(user);
         return "redirect:/users/login";
     }
 

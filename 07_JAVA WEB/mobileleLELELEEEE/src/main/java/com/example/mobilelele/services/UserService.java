@@ -1,21 +1,19 @@
 package com.example.mobilelele.services;
 
-import com.example.mobilelele.models.dtos.UserLoginDTO;
-import com.example.mobilelele.models.dtos.UserRegisterDTO;
+import com.example.mobilelele.models.dtos.UserDTOs.UserLoginDTO;
+import com.example.mobilelele.models.dtos.UserDTOs.UserRegisterDTO;
 import com.example.mobilelele.models.entities.RoleEntity;
 import com.example.mobilelele.models.entities.UserEntity;
-import com.example.mobilelele.models.enums.RoleEnum;
 import com.example.mobilelele.models.sessions.UserSession;
 import com.example.mobilelele.repositories.RoleRepository;
 import com.example.mobilelele.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 
@@ -37,19 +35,13 @@ public class UserService {
         this.userSession = userSession;
     }
 
-    public boolean registerUser(UserRegisterDTO userRegisterDTO) {
+    public void registerUser(UserRegisterDTO userRegisterDTO) {
         userRegisterDTO.setPassword(this.passwordEncoder.encode(userRegisterDTO.getPassword()));
         UserEntity createdUser = this.modelMapper.map(userRegisterDTO, UserEntity.class);
         RoleEntity userRole = this.roleRepository.findById(1L).get();
         createdUser.setRole(userRole);
 
-        try {
-            this.userRepository.save(createdUser);
-            return true;
-        } catch(DataIntegrityViolationException e) {
-            return false;
-        }
-
+        this.userRepository.save(createdUser);
     }
 
     public boolean userLoggedIn(UserLoginDTO userLoginDTO) {
@@ -77,4 +69,7 @@ public class UserService {
         this.userSession.clear();
     }
 
+    public Optional<UserEntity> findUserByUsername(String username) {
+        return this.userRepository.findByUsername(username);
+    }
 }
